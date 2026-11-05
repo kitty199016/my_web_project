@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Локальный Bootstrap</title>
+    <!-- Путь к локальному файлу CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Локальный Bootstrap</a>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="p-5 mb-4 bg-white rounded-3 shadow-sm">
+            <div class="container-fluid py-5 text-center">
+                <h1 class="display-5 fw-bold text-danger">Всё работает полностью оффлайн!</h1>
+                <p class="col-md-8 fs-4 mx-auto text-muted">
+                    Сервер успешно распознает пути, отдавая страницу <code>index.html</code>,
+                    но для файлов из папки <code>/static/</code> он делает исключение и возвращает настоящие стили и скрипты.
+                </p>
+                <button class="btn btn-danger btn-lg" type="button">Проверка кнопки</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Путь к локальному файлу JS -->
+    <script src="/static/js/bootstrap.min.js"></script>
+</body>
+</html>
