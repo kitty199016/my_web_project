@@ -2,7 +2,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 import os
 
 PORT = 8000
-TEMPLATE_PATH = os.path.join("templates", "index.html")
+TEMPLATE_PATH = os.path.join("web", "index.html")
 
 
 class CustomHandler(BaseHTTPRequestHandler):
