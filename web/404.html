@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Страница не найдена</title>
+  <!-- Подключаем Bootstrap 5 CSS и иконки через CDN -->
+  <link href="https://jsdelivr.net" rel="stylesheet">
+  <link href="https://jsdelivr.net" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      height: 100vh;
+    }
+    .error-code {
+      font-size: 8rem;
+      font-weight: 700;
+      color: #6c757d;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="d-flex align-items-center justify-content-center text-center">
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+
+        <!-- Иконка знака вопроса / поиска -->
+        <div class="mb-4 text-warning">
+          <i class="bi bi-exclamation-triangle-fill display-1"></i>
+        </div>
+
+        <!-- Большие цифры 404 -->
+        <h1 class="error-code mb-2">404</h1>
+
+        <h2 class="fw-bold text-dark mb-3">Упс! Страница не найдена</h2>
+
+        <p class="text-muted mb-4">
+          Запрашиваемый вами файл или страница не существует. Возможно, ссылка устарела или адрес был введен с ошибкой.
+        </p>
+
+        <!-- Кнопка возврата на главную страницу -->
+        <a href="/" class="btn btn-primary px-4 py-2 shadow-sm">
+          <i class="bi bi-house-door-fill me-2"></i> Вернуться на главную
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
