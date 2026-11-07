@@ -7,27 +7,87 @@
     <!-- Путь к локальному файлу CSS -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body class="bg-light">
+<body>
+<div class="d-flex">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Локальный Bootstrap</a>
-        </div>
-    </nav>
+  <!-- 1. БОКОВОЕ МЕНЮ (САЙДБАР) -->
+  <div class="sidebar d-flex flex-column p-3 text-white">
+    <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <i class="bi bi-bootstrap-fill me-2 fs-4"></i>
+      <span class="fs-4">Меню</span>
+    </a>
+    <hr>
+    <!-- Основная навигация -->
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="#" class="nav-link"><i class="bi bi-house-door me-2"></i> Главная</a>
+      </li>
+      <li>
+        <a href="#" class="nav-link"><i class="bi bi-grid me-2"></i> Категории</a>
+      </li>
+      <li>
+        <a href="#" class="nav-link"><i class="bi bi-card-checklist me-2"></i> Заказы</a>
+      </li>
+      <li>
+        <a href="#" class="nav-link active"><i class="bi bi-person-lines-fill me-2"></i> Контакты</a>
+      </li>
+    </ul>
+  </div>
 
-    <div class="container my-5">
-        <div class="p-5 mb-4 bg-white rounded-3 shadow-sm">
-            <div class="container-fluid py-5 text-center">
-                <h1 class="display-5 fw-bold text-danger">Всё работает полностью оффлайн!</h1>
-                <p class="col-md-8 fs-4 mx-auto text-muted">
-                    Сервер успешно распознает пути, отдавая страницу <code>index.html</code>,
-                    но для файлов из папки <code>/static/</code> он делает исключение и возвращает настоящие стили и скрипты.
-                </p>
-                <button class="btn btn-danger btn-lg" type="button">Проверка кнопки</button>
-            </div>
+  <!-- 2. ОСНОВНОЙ КОНТЕНТ -->
+  <div class="flex-grow-1 p-5">
+    <div class="container-fluid">
+
+      <!-- Заголовок страницы -->
+      <h1 class="mb-5 display-5 fw-normal">Контакты</h1>
+
+      <!-- СЕТКА: делим контент на Форму и Описание -->
+      <div class="row g-5">
+
+        <!-- Левая колонка: Форма обратной связи -->
+        <div class="col-md-6">
+          <div class="card p-4 shadow-sm border-0">
+            <form>
+              <div class="mb-3">
+                <label for="nameInput" class="form-label text-secondary fw-semibold">Имя</label>
+                <input type="text" class="form-control" id="nameInput">
+              </div>
+
+              <div class="mb-3">
+                <label for="emailInput" class="form-label text-secondary fw-semibold">Почта</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light text-secondary"><i class="bi bi-at"></i></span>
+                  <input type="email" class="form-control" id="emailInput">
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label for="messageTextarea" class="form-label text-secondary fw-semibold">Сообщение</label>
+                <textarea class="form-control" id="messageTextarea" rows="4"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary px-4 py-2">Отправить</button>
+            </form>
+          </div>
         </div>
+
+        <!-- Правая колонка: Текстовое описание -->
+        <div class="col-md-6">
+          <h3 class="fw-bold mb-3">Наши контакты</h3>
+          <p class="text-muted leading-relaxed">
+          Наша компания что то покупает, что то продает. Свжитесь с нами для покупки чего либо, либо продажи. Находится неизвестно где.
+          </p>
+          <p class="text-secondary small mt-4">
+            Все права зарегестрированы, подделка страницы преследуется по закону)
+          </p>
+        </div>
+
+      </div> <!-- /row -->
+
     </div>
+  </div>
 
+</div>
     <!-- Путь к локальному файлу JS -->
     <script src="/static/js/bootstrap.min.js"></script>
 </body>
