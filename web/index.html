@@ -7,88 +7,118 @@
     <!-- Путь к локальному файлу CSS -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-<div class="d-flex">
+<body class="d-flex">
 
-  <!-- 1. БОКОВОЕ МЕНЮ (САЙДБАР) -->
-  <div class="sidebar d-flex flex-column p-3 text-white">
-    <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-      <i class="bi bi-bootstrap-fill me-2 fs-4"></i>
-      <span class="fs-4">Меню</span>
-    </a>
-    <hr>
-    <!-- Основная навигация -->
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a href="#" class="nav-link"><i class="bi bi-house-door me-2"></i> Главная</a>
-      </li>
-      <li>
-        <a href="#" class="nav-link"><i class="bi bi-grid me-2"></i> Категории</a>
-      </li>
-      <li>
-        <a href="#" class="nav-link"><i class="bi bi-card-checklist me-2"></i> Заказы</a>
-      </li>
-      <li>
-        <a href="#" class="nav-link active"><i class="bi bi-person-lines-fill me-2"></i> Контакты</a>
-      </li>
-    </ul>
-  </div>
-
-  <!-- 2. ОСНОВНОЙ КОНТЕНТ -->
-  <div class="flex-grow-1 p-5">
-    <div class="container-fluid">
-
-      <!-- Заголовок страницы -->
-      <h1 class="mb-5 display-5 fw-normal">Контакты</h1>
-
-      <!-- СЕТКА: делим контент на Форму и Описание -->
-      <div class="row g-5">
-
-        <!-- Левая колонка: Форма обратной связи -->
-        <div class="col-md-6">
-          <div class="card p-4 shadow-sm border-0">
-            <form>
-              <div class="mb-3">
-                <label for="nameInput" class="form-label text-secondary fw-semibold">Имя</label>
-                <input type="text" class="form-control" id="nameInput">
-              </div>
-
-              <div class="mb-3">
-                <label for="emailInput" class="form-label text-secondary fw-semibold">Почта</label>
-                <div class="input-group">
-                  <span class="input-group-text bg-light text-secondary"><i class="bi bi-at"></i></span>
-                  <input type="email" class="form-control" id="emailInput">
-                </div>
-              </div>
-
-              <div class="mb-4">
-                <label for="messageTextarea" class="form-label text-secondary fw-semibold">Сообщение</label>
-                <textarea class="form-control" id="messageTextarea" rows="4"></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary px-4 py-2">Отправить</button>
-            </form>
-          </div>
+    <!-- Боковое меню -->
+    <div class="sidebar d-flex flex-column p-3 text-white justify-content-between position-sticky top-0">
+        <div>
+            <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none fs-5 fw-bold">
+                <i class="bi bi-bootstrap-fill me-2"></i> Меню
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active" aria-current="page">
+                        <i class="bi bi-house-door me-2"></i> Главная
+                    </a>
+                </li>
+                <li>
+                    <a href="catalog.html" class="nav-link">
+                        <i class="bi bi-grid me-2"></i> Категории
+                    </a>
+                </li>
+                <li>
+                    <a href="orders.html" class="nav-link">
+                        <i class="bi bi-card-list me-2"></i> Заказы
+                    </a>
+                </li>
+                <li>
+                    <a href="contacts.html" class="nav-link">
+                        <i class="bi bi-person me-2"></i> Контакты
+                    </a>
+                </li>
+            </ul>
         </div>
 
-        <!-- Правая колонка: Текстовое описание -->
-        <div class="col-md-6">
-          <h3 class="fw-bold mb-3">Наши контакты</h3>
-          <p class="text-muted leading-relaxed">
-          Наша компания что то покупает, что то продает. Свжитесь с нами для покупки чего либо, либо продажи. Находится неизвестно где.
-          </p>
-          <p class="text-secondary small mt-4">
-            Все права зарегестрированы, подделка страницы преследуется по закону)
-          </p>
+        <!-- Профиль пользователя -->
+        <div class="dropdown">
+            <hr>
+            <div class="mb-2">
+                <a href="#" class="text-white text-decoration-none d-block small opacity-75">Профиль</a>
+                <a href="#" class="text-white text-decoration-none d-block small opacity-75">Выход</a>
+            </div>
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="users.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                <strong>Пользователь</strong>
+            </a>
         </div>
-
-      </div> <!-- /row -->
-
     </div>
-  </div>
 
-</div>
+    <!-- Основной контент -->
+    <div class="flex-grow-1 p-5 text-center">
+        <h1 class="display-5 fw-normal mb-3">Главная</h1>
+        <p class="text-muted mb-5">Вы находитесь на сайте, предназначенном для продажи товаров.</p>
+
+        <!-- Сетка товаров -->
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+
+                <!-- Карточка 1 -->
+                <div class="col" style="max-width: 360px;">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-header py-3 bg-light">
+                            <h4 class="my-0 fw-normal">Товар 1</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">$ 1</h1>
+                            <ul class="list-unstyled mt-3 mb-4 text-muted small">
+                                <li>1 users included, 2 GB of storage,</li>
+                                <li>Email support, Help center access</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-outline-primary py-2">Купить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 2 -->
+                <div class="col" style="max-width: 360px;">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-header py-3 bg-light">
+                            <h4 class="my-0 fw-normal">Товар 2</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">$ 100</h1>
+                            <ul class="list-unstyled mt-3 mb-4 text-muted small">
+                                <li>10 users included, 2 GB of storage,</li>
+                                <li>Email support, Help center access</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-outline-primary py-2">Купить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка 3 -->
+                <div class="col" style="max-width: 360px;">
+                    <div class="card h-100 text-center shadow-sm">
+                        <div class="card-header py-3 bg-light">
+                            <h4 class="my-0 fw-normal">Товар 3</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">$ 1000</h1>
+                            <ul class="list-unstyled mt-3 mb-4 text-muted small">
+                                <li>100 users included, 20 GB of storage, Unlimited Network</li>
+                                <li>Email support, Help center access</li>
+                            </ul>
+                            <button type="button" class="w-100 btn btn-outline-primary py-2">Купить</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <!-- Путь к локальному файлу JS -->
     <script src="/static/js/bootstrap.min.js"></script>
 </body>
+
 </html>

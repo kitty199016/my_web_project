@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Локальный Bootstrap</title>
+    <!-- Путь к локальному файлу CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="d-flex">
+
+    <!-- Боковое меню -->
+    <div class="sidebar d-flex flex-column p-3 text-white justify-content-between position-sticky top-0">
+        <div>
+            <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none fs-5 fw-bold">
+                <i class="bi bi-bootstrap-fill me-2"></i> Меню
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="bi bi-house-door me-2"></i> Главная
+                    </a>
+                </li>
+                <li>
+                    <a href="catalog.html" class="nav-link">
+                        <i class="bi bi-grid me-2"></i> Каталог
+                    </a>
+                </li>
+                <li>
+                    <a href="orders.html" class="nav-link">
+                        <i class="bi bi-card-list me-2"></i> Заказы
+                    </a>
+                </li>
+                <li>
+                    <a href="contacts.html" class="nav-link active" aria-current="page">
+                        <i class="bi bi-person me-2"></i> Контакты
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Профиль пользователя -->
+        <div class="dropdown">
+            <hr>
+            <div class="mb-2">
+                <a href="#" class="text-white text-decoration-none d-block small opacity-75">Профиль</a>
+                <a href="#" class="text-white text-decoration-none d-block small opacity-75">Выход</a>
+            </div>
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="users.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                <strong>Пользователь</strong>
+            </a>
+        </div>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="flex-grow-1 p-5">
+        <h1 class="display-5 fw-normal text-center mb-5">Контакты</h1>
+
+        <div class="container" style="max-width: 960px;">
+            <div class="row g-5">
+                <!-- Левая колонка: Форма обратной связи -->
+                <div class="col-md-5">
+                    <div class="card p-4 shadow-sm">
+                        <form>
+                            <div class="mb-3">
+                                <label for="nameInput" class="form-label text-muted small">Имя</label>
+                                <input type="text" class="form-line form-control" id="nameInput">
+                            </div>
+                            <div class="mb-3">
+                                <label for="emailInput" class="form-label text-muted small">Почта</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-transparent text-muted">@</span>
+                                    <input type="email" class="form-control" id="emailInput">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="messageInput" class="form-label text-muted small">Сообщение</label>
+                                <textarea class="form-control" id="messageInput" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary px-4">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Правая колонка: Текст -->
+                <div class="col-md-7">
+                    <h4 class="fw-bold mb-3">Наши контакты</h4>
+                    <p class="text-secondary lh-base mb-4">
+                        Наша компания что то покупает, что то продает. Свжитесь с нами для покупки чего либо, либо продажи. Находится неизвестно где.
+                    </p>
+                    <p class="text-muted small">
+                        Все права зарегестрированы, подделка страницы преследуется по закону)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Путь к локальному файлу JS -->
+    <script src="/static/js/bootstrap.min.js"></script>
+</body>
+
+</html>

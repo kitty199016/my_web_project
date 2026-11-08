@@ -2,10 +2,16 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 import os
 
 PORT = 8000
-TEMPLATE_PATH = os.path.join("web", "index.html")
 ERR_404_PATH = os.path.join("web", "404.html")
 ERR_500_PATH = os.path.join("web", "500.html")
 
+ROUTES = {
+    "/": os.path.join("web", "index.html"),
+    "/index.html": os.path.join("web", "index.html"),
+    "/catalog.html": os.path.join("web", "catalog.html"),
+    "/orders.html": os.path.join("web", "orders.html"),
+    "/contacts.html": os.path.join("web", "contacts.html")
+}
 
 class CustomHandler(BaseHTTPRequestHandler):
     def send_error_page(self, status_code, filepath, default_message):
@@ -46,12 +52,14 @@ class CustomHandler(BaseHTTPRequestHandler):
                     return
 
             # 2. На ЛЮБОЙ другой запрос отдаем index.html
-            if self.path == "/":
-                if os.path.exists(TEMPLATE_PATH):
+            if self.path in ROUTES:
+                template_path = ROUTES[self.path]
+
+                if os.path.exists(template_path):
                     self.send_response(200)
                     self.send_header("Content-type", "text/html; charset=utf-8")
                     self.end_headers()
-                    with open(TEMPLATE_PATH, "rb") as f:
+                    with open(template_path, "rb") as f:
                         self.wfile.write(f.read())
                     return
                 else:
